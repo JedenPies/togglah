@@ -3,14 +3,14 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>pl.jedenpies.togglah</groupId>
+        <groupId>pl.patrykdobrowolski.togglah</groupId>
         <artifactId>togglah-listener</artifactId>
         <version>0.0.1</version>
     </parent>
     <artifactId>togglah-rabbitmq-listener</artifactId>
     <dependencies>
         <dependency>
-            <groupId>pl.jedenpies.togglah</groupId>
+            <groupId>pl.patrykdobrowolski.togglah</groupId>
             <artifactId>togglah-server-core</artifactId>
         </dependency>
         <dependency>
