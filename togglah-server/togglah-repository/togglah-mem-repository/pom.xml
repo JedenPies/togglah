@@ -3,15 +3,20 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>pl.jedenpies.togglah</groupId>
+        <groupId>pl.patrykdobrowolski.togglah</groupId>
         <artifactId>togglah-repository</artifactId>
         <version>0.0.1</version>
     </parent>
     <artifactId>togglah-mem-repository</artifactId>
     <dependencies>
         <dependency>
-            <groupId>pl.jedenpies.togglah</groupId>
+            <groupId>pl.patrykdobrowolski.togglah</groupId>
             <artifactId>togglah-server-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
     </dependencies>
 </project>
