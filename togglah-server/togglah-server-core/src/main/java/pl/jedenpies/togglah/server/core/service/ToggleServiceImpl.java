@@ -30,8 +30,9 @@ public class ToggleServiceImpl implements ToggleService {
         Object oldValue = toggle.getValue();
         if (!Objects.equals(parsedValue, oldValue)) {
             toggle.setValue(parsedValue);
-            togglesRepository.save(toggle);
-            valueListeners.stream().forEach(l -> l.valueChanged(toggle));
+            Toggle saved = togglesRepository.save(toggle);
+            valueListeners.stream().forEach(l -> l.valueChanged(saved));
+            return saved;
         }
         return toggle;
     }

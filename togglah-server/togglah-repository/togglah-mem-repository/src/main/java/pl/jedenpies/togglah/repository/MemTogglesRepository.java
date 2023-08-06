@@ -18,16 +18,24 @@ public class MemTogglesRepository implements TogglesRepository {
     }
 
     @Override
-    public void save(Toggle toggle) {
+    public synchronized Toggle save(Toggle toggle) {
         String key = toggle.getDefinition().getKey();
-        toggles.put(key, toggle);
+        Toggle newToggle = withIncrementedVersion(toggle);
+        toggles.put(key, newToggle);
+        return newToggle;
+    }
+
+    private Toggle withIncrementedVersion(Toggle toggle) {
+        return Toggle.builder()
+                .definition(toggle.getDefinition())
+                .value(toggle.getValue())
+                .version(Optional.ofNullable(toggle.getVersion()).map(v -> v + 1).orElse(1L))
+                .build();
     }
     
     private Toggle emptyToggle(Definition definition) {
         return Toggle.builder()
             .definition(definition)
-            .value(null)
             .build();
     }
-
 }

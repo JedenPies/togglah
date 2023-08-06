@@ -1,0 +1,14 @@
+spring:
+
+  togglah:
+    repository:
+      type: memory
+      memory:
+
+    listener:
+      rabbitmq:
+        enabled: true
+        addresses: localhost:5672
+        username: guest
+        password: guest
+        virtual-host: /

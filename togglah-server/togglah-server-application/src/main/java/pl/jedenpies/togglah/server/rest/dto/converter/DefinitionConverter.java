@@ -15,7 +15,7 @@ import pl.jedenpies.togglah.server.rest.dto.exception.ValidationException;
 public class DefinitionConverter {
 
     private final ToggleTypesProvider typesProvider;
-    
+
     public Definition fromDto(DefinitionDto dto) throws ValidationException {
         validateKey(dto);
         ToggleType<?> type = typesProvider.getByKey(dto.getType()).orElseThrow(() -> new NoGivenTypeAvailable(dto.getType()));
@@ -24,7 +24,7 @@ public class DefinitionConverter {
             .type(type)
             .build();
     }
-    
+
     public DefinitionDto toDto(Definition definition) {
         return DefinitionDto.builder()
             .key(definition.getKey())

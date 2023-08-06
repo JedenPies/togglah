@@ -12,4 +12,5 @@ public class Toggle {
 
     @Setter
     private Object value;
+    private Long version;
 }

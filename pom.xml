@@ -32,6 +32,11 @@
                 <artifactId>togglah-mem-repository</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>pl.jedenpies.togglah</groupId>
+                <artifactId>togglah-rabbitmq-listener</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             
             <dependency>
                 <groupId>org.springframework.boot</groupId>

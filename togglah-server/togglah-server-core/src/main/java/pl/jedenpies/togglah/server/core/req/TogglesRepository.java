@@ -12,6 +12,6 @@ public interface TogglesRepository {
      * @return should always return value 
      */
     Toggle get(String key, Definition definition);
-    void save(Toggle toggle);
+    Toggle save(Toggle toggle);
 
 }

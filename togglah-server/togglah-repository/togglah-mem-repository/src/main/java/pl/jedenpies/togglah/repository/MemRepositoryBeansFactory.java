@@ -1,15 +1,15 @@
-package pl.jedenpies.togglah.server.factory;
+package pl.jedenpies.togglah.repository;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
-import pl.jedenpies.togglah.repository.MemDefinitionsRepository;
-import pl.jedenpies.togglah.repository.MemTogglesRepository;
 import pl.jedenpies.togglah.server.core.req.DefinitionsRepository;
 import pl.jedenpies.togglah.server.core.req.TogglesRepository;
 
 @Configuration
-public class CommonBeansFactory {
+@Conditional(MemoryDatabaseSelectedCondition.class)
+public class MemRepositoryBeansFactory {
 
     @Bean
     public DefinitionsRepository definitionsRepository() {

@@ -1,4 +1,4 @@
-package pl.jedenpies.togglah.server.rest.dto;
+package pl.jedenpies.togglah.listener.dto;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -7,6 +7,7 @@ import lombok.Getter;
 @Getter
 public class ToggleDto {
 
+    private final String key;
     private final String type;
     private final Object value;
     private final Long version;
